@@ -30,10 +30,8 @@ public class Question {
     this.grade = grade;
   }
 
-  public int calculateRank() {
-    //TO-DO
-  }
-
-
+  // public int calculateRank() {
+  //   //TO-DO
+  // }
 
 }
