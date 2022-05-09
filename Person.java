@@ -52,4 +52,8 @@ public class Person {
   public void setEmailAdress(String emailAdress) {
     this.emailAdress = emailAdress;
   }
+
+  // public String toString() {
+    //TO-DO
+  // }
 }

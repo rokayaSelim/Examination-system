@@ -1,6 +1,15 @@
+import java.util.*;
+import java.io.*;
+
+
 public class Admin {
   private String username;
   private String password;
+
+  Admin(){
+    this.username = "";
+    this.password = "";
+  }
 
   Admin(String username, String password) {
     this.username = username;

@@ -70,9 +70,9 @@ public class Exam {
     this.courseCode = courseCode;
   }
 
-  public float calculateGrade(Question[] questions) {
+  // public float calculateGrade(Question[] questions) {
     //TO-DO
-  }
+  // }
 
 
 
