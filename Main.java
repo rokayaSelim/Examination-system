@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+import java.util.*; import java.io.*;
 
 class Main {
   public static Login login  = new Login();
@@ -10,14 +9,14 @@ class Main {
       Admin admin = new Admin();
       Scanner scanner = new Scanner(System.in);
       System.out.println("Welcome to Mini-LMS");
-      System.out.println("Enter a) Admin  u) User");
+      System.out.println("Enter A) Admin  U) User");
       String str = scanner.next();
       if(str.toLowerCase().equals("a")) {
         loginAdmin(admin);
       }
       else if(str.toLowerCase().equals("u")) {
         //Either the user will Signup or Signin
-        System.out.println("Enter SU)Sign-Up or SI)Sign-In");
+        System.out.println("Enter SU) Sign-Up or SI) Sign-In");
         String sign = scanner.next();
         if(sign.toLowerCase().equals("su")) {
           Student student  = new Student();
@@ -51,41 +50,63 @@ public static void loginAdmin(Admin admin){
     login.validateAdmin(username, String.valueOf(password));
 }
 
-public static void signUpStudent(Student student){
-    IdAndPasswords info = new IdAndPasswords();
-    Scanner scanner = new Scanner(System.in);
-    Scanner scanner2 = new Scanner(System.in);
-    System.out.println("Please enter your username and password");
-    System.out.print("Username: ");
-    String username = scanner.next();
-    student.setUsername(username);
-    System.out.print("Password: ");
-    String pass = scanner.next();
-    student.setPassword(pass);
-    // char password[] = null;
-    // try {
-    //    password = PasswordField.getPassword(System.in, "Password: ");
-    // } catch(IOException ioe) {
-    //    ioe.printStackTrace();
-    // }
-    // if(password == null ) {
-    //    System.out.println("No password entered");
-    // }
-    // System.out.println("Please enter the following data");
-    // System.out.print("Name: ");
-    // String name = scanner.next();
-    // student.setName(name);
-    // System.out.print("Phone number: ");
-    // String phoneNumber = scanner2.next();
-    // student.setPhoneNumber(phoneNumber);          
-    // System.out.print("Email adress: ");
-    // String emailAdress = scanner2.next();
-    // student.setEmailAdress(emailAdress);
-    // System.out.print("id: ");
-    // int id = scanner2.nextInt();
-    // student.setId(id);
-    info.appendUser(student);
-    login.addInfo(student);
+public static void signUp(Person user){
+    if(user instanceof Student) {
+      IdAndPasswords info = new IdAndPasswords();
+      Scanner scanner = new Scanner(System.in);
+      Scanner scanner2 = new Scanner(System.in);
+      System.out.println("Please enter your username and password");
+      System.out.print("Username: ");
+      String username = scanner.next();
+      student.setUsername(username);
+      System.out.print("Password: ");
+      String pass = scanner.next();
+      student.setPassword(pass);
+      // System.out.println("Please enter the following data");
+      // System.out.print("Name: ");
+      // String name = scanner.next();
+      // student.setName(name);
+      // System.out.print("Phone number: ");
+      // String phoneNumber = scanner2.next();
+      // student.setPhoneNumber(phoneNumber);          
+      // System.out.print("Email adress: ");
+      // String emailAdress = scanner2.next();
+      // student.setEmailAdress(emailAdress);
+      // System.out.print("id: ");
+      // int id = scanner2.nextInt();
+      // student.setId(id);
+      students.add(user);
+      info.appendUser(student);
+      login.addInfo(student);
+    }
+    else if(user instanceof Instructor) {
+      IdAndPasswords info = new IdAndPasswords();
+      Scanner scanner = new Scanner(System.in);
+      Scanner scanner2 = new Scanner(System.in);
+      System.out.println("Please enter your username and password");
+      System.out.print("Username: ");
+      String username = scanner.next();
+      student.setUsername(username);
+      System.out.print("Password: ");
+      String pass = scanner.next();
+      student.setPassword(pass);
+      // System.out.println("Please enter the following data");
+      // System.out.print("Name: ");
+      // String name = scanner.next();
+      // student.setName(name);
+      // System.out.print("Phone number: ");
+      // String phoneNumber = scanner2.next();
+      // student.setPhoneNumber(phoneNumber);          
+      // System.out.print("Email adress: ");
+      // String emailAdress = scanner2.next();
+      // student.setEmailAdress(emailAdress);
+      // System.out.print("id: ");
+      // int id = scanner2.nextInt();
+      // student.setId(id);
+      students.add(user);
+      info.appendUser(user);
+      login.addInfo(user);
+    }
 }
 
 public static void loginStudent(Student student){
@@ -98,16 +119,6 @@ public static void loginStudent(Student student){
     System.out.print("Password: ");
     String pass = scanner.next();
     student.setPassword(pass);
-    // char password[] = null;
-    // try {
-    //    password = PasswordField.getPassword(System.in, "Password: ");
-    // } catch(IOException ioe) {
-    //    ioe.printStackTrace();
-    // }
-    // if(password == null ) {
-    //    System.out.println("No password entered");
-    // } 
-    // String pass = String.valueOf(password);
     if(login.validateUser(username, pass)) {
       System.out.println("User exists and can login");
     }
@@ -126,3 +137,12 @@ public static void loginStudent(Student student){
     // System.out.println(instructor.getName());
     // instructor.addCourse(course1);
     // instructor.printCourses();
+    // char password[] = null;
+    // try {
+    //    password = PasswordField.getPassword(System.in, "Password: ");
+    // } catch(IOException ioe) {
+    //    ioe.printStackTrace();
+    // }
+    // if(password == null ) {
+    //    System.out.println("No password entered");
+    // }

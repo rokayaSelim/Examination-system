@@ -42,7 +42,6 @@ public class Person {
   }
   public void setPassword(String password) {
     this.password = password;
-    System.out.println("hello");
   }
   public void setName(String name) {
     this.name = name;
