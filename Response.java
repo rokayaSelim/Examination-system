@@ -22,6 +22,4 @@ public class Response {
     return SelectedChoice;
   }
 
-
-
 }

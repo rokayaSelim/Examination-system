@@ -1,14 +1,24 @@
-import java.util.*; import java.io.*;
+import java.util.*;
+import java.io.*;
 
 class Main {
   public static Login login  = new Login();
+  //A list containing all the students signed up
   public static List<Student> students = new ArrayList<Student>();
+  //A list containing all the instructors signed up
   public static List<Instructor> instructors = new ArrayList<Instructor>();
+  //an object that will always contain all the usernames and passwords for all the current users
   public static IdAndPasswords info = new IdAndPasswords();
   public static void main(String[] args) {
     System.out.println("Welcome to Mini-LMS");
+    // To-Do : Change the true condition to a boolean variable named exit for example 
+    // and intialize to be false and make it true if the user pressed 'e' or 'E' 
+    // the condition should then be like this while(!exit)
+    // and add an option that the user 
+    // could exit at any time of the program write now I prompt for exit but it does nothing
+    //Main loop of the program
     while(true) {
-      System.out.println("A) Admin  U) User");
+      System.out.println("A) Admin  U) User E)exit");
       Admin admin = new Admin();
       Scanner scanner = new Scanner(System.in);
       String str = scanner.next();
@@ -17,7 +27,7 @@ class Main {
       }
       else if(str.toLowerCase().equals("u")) {
         //Either the user will Signup or Signin
-        System.out.println("ss) Sign-up as a student  si) Signup as Instructor ls) Login as a student li) Login as instructor");
+        System.out.println("ss) Sign-up as a student  si) Signup as Instructor ls) Login as a student li) Login as instructor E)exit");
         String sign = scanner.next();
         if(sign.toLowerCase().equals("ss")) {
           Student student = new Student();
