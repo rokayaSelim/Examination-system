@@ -1,11 +1,8 @@
 import java.util.HashMap;
 
 public class IdAndPasswords {
+  //A map containing all users usernames and password
   HashMap<String, String> idAndPasswords = new HashMap<String, String>();
-
-  IdAndPasswords() {
-    idAndPasswords.put("omar77", "12345");
-  }
 
   public HashMap<String, String> getLoginInfo() {
     return idAndPasswords;
