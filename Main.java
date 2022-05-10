@@ -15,7 +15,7 @@ class Main {
     // and intialize to be false and make it true if the user pressed 'e' or 'E' 
     // the condition should then be like this while(!exit)
     // and add an option that the user 
-    // could exit at any time of the program write now I prompt for exit but it does nothing
+    // could exit at any time of the program right now I prompt for exit but it does nothing
     //Main loop of the program
     while(true) {
       System.out.println("A) Admin  U) User E)exit");
